@@ -1,0 +1,13 @@
+import requests
+from bs4 import BeautifulSoup
+import lxml
+re=requests.get("https://search.bilibili.com/all?keyword=梶裕贵&from_source=banner_search")
+soup=BeautifulSoup(re.content,'lxml')
+#for line in soup.find_all('li'):
+    #print(line,'\n')
+#    print(line)
+#for line in soup.find_all('a',href=True):
+    #print(line.text)
+for line in soup.find_all('a',target="_blank"):
+    print(line.text,'\n')
+#https://search.bilibili.com/all?keyword=梶裕贵&from_source=banner_search&page=2
